@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>贪吃蛇 Snake Game</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="game-container">
+        <header class="game-header">
+            <h1 class="game-title">🐍 贪吃蛇</h1>
+            <div class="score-panel">
+                <div class="score-item">
+                    <span class="score-label">当前得分</span>
+                    <span class="score-value" id="score">0</span>
+                </div>
+                <div class="score-item">
+                    <span class="score-label">最高纪录</span>
+                    <span class="score-value best" id="best-score">0</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="game-main">
+            <div class="canvas-wrapper">
+                <canvas id="game-canvas" width="480" height="480"></canvas>
+                <div class="overlay" id="overlay">
+                    <div class="overlay-content">
+                        <h2 id="overlay-title">准备好了吗？</h2>
+                        <p id="overlay-message">按 空格键 或点击开始按钮开始游戏</p>
+                        <button class="btn btn-primary" id="overlay-btn">开始游戏</button>
+                    </div>
+                </div>
+            </div>
+
+            <aside class="side-panel">
+                <div class="control-section">
+                    <h3>难度选择</h3>
+                    <div class="difficulty-buttons">
+                        <button class="btn btn-difficulty active" data-speed="180">初级</button>
+                        <button class="btn btn-difficulty" data-speed="120">中级</button>
+                        <button class="btn btn-difficulty" data-speed="70">高级</button>
+                    </div>
+                </div>
+
+                <div class="control-section">
+                    <h3>游戏控制</h3>
+                    <div class="action-buttons">
+                        <button class="btn btn-primary" id="start-btn">开始 / 暂停</button>
+                        <button class="btn btn-secondary" id="restart-btn">重新开始</button>
+                    </div>
+                </div>
+
+                <div class="control-section">
+                    <h3>音效</h3>
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="sound-toggle" checked>
+                        <span class="toggle-slider"></span>
+                    </label>
+                </div>
+
+                <div class="control-section instructions">
+                    <h3>操作说明</h3>
+                    <ul>
+                        <li><kbd>↑</kbd> <kbd>↓</kbd> <kbd>←</kbd> <kbd>→</kbd> 方向键控制移动</li>
+                        <li><kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd> 也可控制移动</li>
+                        <li><kbd>空格</kbd> 开始 / 暂停游戏</li>
+                        <li>吃到食物 +10 分</li>
+                    </ul>
+                </div>
+
+                <div class="mobile-controls">
+                    <div class="d-pad">
+                        <button class="d-btn d-up" data-dir="up">▲</button>
+                        <button class="d-btn d-left" data-dir="left">◀</button>
+                        <button class="d-btn d-right" data-dir="right">▶</button>
+                        <button class="d-btn d-down" data-dir="down">▼</button>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
